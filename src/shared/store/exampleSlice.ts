@@ -2,11 +2,11 @@ import { RootState } from '@/shared/store/store';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface IExampleSliceState {
-  test: boolean;
+  token: boolean;
 }
 
 const initialState: IExampleSliceState = {
-  test: false,
+  token: false,
 };
 
 const ExampleSlice = createSlice({
@@ -14,7 +14,7 @@ const ExampleSlice = createSlice({
   initialState,
   reducers: {
     setHeight: (state, action: PayloadAction<boolean>) => {
-      state.test = action.payload;
+      state.token = action.payload;
     },
   },
 });
@@ -22,7 +22,7 @@ const ExampleSlice = createSlice({
 export const exampleNameActions = ExampleSlice.actions;
 
 export const exampleNameSelectors = {
-  test: (state: RootState) => state.exampleName.test,
+  token: (state: RootState) => state.exampleName.token,
 };
 
 export default ExampleSlice.reducer;
