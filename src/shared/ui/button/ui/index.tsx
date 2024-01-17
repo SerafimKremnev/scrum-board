@@ -1,3 +1,4 @@
+'use client';
 import { cva } from 'class-variance-authority';
 import type { VariantProps } from 'class-variance-authority';
 import clsx from 'clsx';
@@ -10,7 +11,7 @@ interface Props
     VariantProps<typeof cvaButtonInnerRow> {
   href?: string;
   children: ReactNode;
-  onClickButton?: () => void;
+  onClick?: () => void;
   icon?: ReactNode;
   disabled?: boolean;
   type?: 'button' | 'submit';
@@ -69,7 +70,7 @@ const Button: FC<Props> = ({
   href = '',
   innerRef,
   children,
-  onClickButton,
+  onClick,
   icon,
   disabled,
   type,
@@ -87,7 +88,7 @@ const Button: FC<Props> = ({
       scroll={false}
       ref={innerRef}
       href={href}
-      onClick={() => onClickButton?.()}
+      onClick={() => onClick?.()}
       className={clsx(
         cvaButton({
           isLoading,
@@ -125,7 +126,7 @@ const Button: FC<Props> = ({
       ref={innerRef}
       disabled={disabled}
       type={type ?? 'button'}
-      onClick={() => onClickButton?.()}
+      onClick={() => onClick?.()}
       className={clsx(
         cvaButton({
           isLoading,
@@ -150,9 +151,6 @@ const Button: FC<Props> = ({
             </>
           ) : null}
           <span className={cvaButtonInner()}>
-            <span className={cvaButtonInnerRow({})}>
-              {customIcon ? customIcon() : null} {children}
-            </span>
             <span className={cvaButtonInnerRow({})}>
               {customIcon ? customIcon() : null} {children}
             </span>
