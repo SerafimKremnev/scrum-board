@@ -1,6 +1,7 @@
 const SENTRY_PROJECT = process.env.SENTRY_PROJECT;
 const SENTRY_ENABLED = Boolean(Number(process.env.ENABLE_SENTRY));
 
+/** @type {import('next').NextConfig} */
 const moduleExports = {
   reactStrictMode: false,
   images: {
