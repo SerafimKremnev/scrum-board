@@ -10,11 +10,7 @@
 npm i
 ```
 
-Далее необходимо установить husky
-```bash
-npm run prepare
-```
-и добавить файл pre-commit в git
+Далее необходимо добавить файл husky pre-commit в git
 ```bash
 git add .husky/pre-commit
 ```
