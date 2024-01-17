@@ -10,7 +10,7 @@ interface Props
     VariantProps<typeof cvaButtonInnerRow> {
   href?: string;
   children: ReactNode;
-  onClick?: () => void;
+  onClickButton?: () => void;
   icon?: ReactNode;
   disabled?: boolean;
   type?: 'button' | 'submit';
@@ -69,20 +69,15 @@ const Button: FC<Props> = ({
   href = '',
   innerRef,
   children,
-  onClick,
+  onClickButton,
   icon,
-  size = 'default',
-  intent = 'white',
   disabled,
   type,
-  state,
   onlyIcon,
   className,
   dataCursor,
   isLoading,
   target,
-  paddingForIcon,
-  hoverTextAnimation,
   customIcon,
 }) => {
   return href ? (
@@ -92,13 +87,9 @@ const Button: FC<Props> = ({
       scroll={false}
       ref={innerRef}
       href={href}
-      onClick={() => onClick?.()}
+      onClick={() => onClickButton?.()}
       className={clsx(
         cvaButton({
-          intent,
-          size,
-          state,
-          onlyIcon: onlyIcon,
           isLoading,
         }),
         className
@@ -106,7 +97,7 @@ const Button: FC<Props> = ({
       data-cursor={dataCursor}>
       {onlyIcon ? (
         <>
-          {icon ? <div className={cvaIcon({ intent })}>{icon}</div> : null}{' '}
+          {icon ? <div className={cvaIcon()}>{icon}</div> : null}{' '}
           {customIcon ? customIcon() : null} {children}
         </>
       ) : (
@@ -114,27 +105,17 @@ const Button: FC<Props> = ({
           {icon || customIcon ? (
             <>
               {icon ? (
-                <div className={cvaIcon({ intent })}>{icon}</div>
+                <div className={cvaIcon()}>{icon}</div>
               ) : customIcon ? (
                 customIcon()
               ) : null}
             </>
           ) : null}
-          <span className={cvaButtonInner({ size })}>
-            <span
-              className={cvaButtonInnerRow({
-                paddingForIcon,
-                withIcon: icon || customIcon ? true : false,
-                textAnimation: hoverTextAnimation,
-              })}>
+          <span className={cvaButtonInner()}>
+            <span className={cvaButtonInnerRow({})}>
               {customIcon ? customIcon() : null} {children}
             </span>
-            {isLoading ? (
-              <LoadingSpinner
-                size={'sm'}
-                color={intent === 'black' ? 'white' : 'black'}
-              />
-            ) : null}
+            {isLoading ? <LoadingSpinner size={'sm'} color={'black'} /> : null}
           </span>
         </>
       )}
@@ -144,13 +125,9 @@ const Button: FC<Props> = ({
       ref={innerRef}
       disabled={disabled}
       type={type ?? 'button'}
-      onClick={() => onClick?.()}
+      onClick={() => onClickButton?.()}
       className={clsx(
         cvaButton({
-          intent,
-          size,
-          state,
-          onlyIcon: onlyIcon,
           isLoading,
         }),
         className
@@ -159,7 +136,7 @@ const Button: FC<Props> = ({
       {onlyIcon ? (
         <>
           {icon ? (
-            <div className={cvaIcon({ intent })}>{icon}</div>
+            <div className={cvaIcon()}>{icon}</div>
           ) : customIcon ? (
             customIcon()
           ) : null}
@@ -168,33 +145,18 @@ const Button: FC<Props> = ({
         <>
           {icon || customIcon ? (
             <>
-              {icon ? <div className={cvaIcon({ intent })}>{icon}</div> : null}{' '}
+              {icon ? <div className={cvaIcon()}>{icon}</div> : null}{' '}
               {customIcon ? customIcon() : null} {children}
             </>
           ) : null}
-          <span className={cvaButtonInner({ size })}>
-            <span
-              className={cvaButtonInnerRow({
-                paddingForIcon,
-                withIcon: icon || customIcon ? true : false,
-                textAnimation: hoverTextAnimation,
-              })}>
+          <span className={cvaButtonInner()}>
+            <span className={cvaButtonInnerRow({})}>
               {customIcon ? customIcon() : null} {children}
             </span>
-            <span
-              className={cvaButtonInnerRow({
-                paddingForIcon,
-                withIcon: icon || customIcon ? true : false,
-                textAnimation: hoverTextAnimation,
-              })}>
+            <span className={cvaButtonInnerRow({})}>
               {customIcon ? customIcon() : null} {children}
             </span>
-            {isLoading ? (
-              <LoadingSpinner
-                size={'sm'}
-                color={intent === 'black' ? 'white' : 'black'}
-              />
-            ) : null}
+            {isLoading ? <LoadingSpinner size={'sm'} color={'black'} /> : null}
           </span>
         </>
       )}
