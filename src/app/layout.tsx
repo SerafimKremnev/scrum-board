@@ -33,8 +33,6 @@ interface RootLayoutProps {
   params: any;
 }
 
-const data = [];
-
 export default function RootLayout({ children, ...rest }: RootLayoutProps) {
   return (
     <html lang="ru">

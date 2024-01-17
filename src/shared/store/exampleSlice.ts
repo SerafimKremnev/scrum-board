@@ -3,7 +3,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface IExampleSliceState {
   test: boolean;
-  visible: boolean;
 }
 
 const initialState: IExampleSliceState = {
@@ -15,7 +14,7 @@ const ExampleSlice = createSlice({
   initialState,
   reducers: {
     setHeight: (state, action: PayloadAction<boolean>) => {
-      state.height = action.payload;
+      state.test = action.payload;
     },
   },
 });
