@@ -6,7 +6,7 @@
     "node": ">=20.11.0"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build && npm run lint && npm run format:fix",
     "start": "next start",
     "lint": "next lint",
@@ -19,7 +19,7 @@
     "@popperjs/core": "^2.11.8",
     "@reduxjs/toolkit": "^1.9.5",
     "@sentry/nextjs": "^7.93.0",
-    "@studio-freight/react-lenis": "^0.0.38",
+    "@studio-freight/react-lenis": "^0.0.43",
     "@types/node": "20.4.5",
     "@types/react": "18.2.16",
     "@types/react-dom": "18.2.7",
