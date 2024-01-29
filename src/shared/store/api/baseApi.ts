@@ -12,6 +12,6 @@ export const baseApi = createApi({
     baseUrl: URL,
     prepareHeaders: (headers) => prepareHeaders(headers),
   }),
-  tagTypes: [],
+  tagTypes: ['example'],
   endpoints: () => ({}),
 });
