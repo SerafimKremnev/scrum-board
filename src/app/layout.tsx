@@ -2,7 +2,7 @@ import './globals.css';
 import React from 'react';
 import type { Metadata } from 'next';
 import ReduxProvider from '@/shared/store/ReduxProvider';
-import SmoothScroll from '@/shared/ui/smooth-scroll';
+import SmoothScroll from '@/shared/ui/SmoothScroll/SmoothScroll';
 
 // import 'swiper/css';
 // import 'swiper/css/navigation';

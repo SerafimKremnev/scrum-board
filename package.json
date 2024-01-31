@@ -6,7 +6,7 @@
     "node": ">=20.11.0"
   },
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build && npm run lint && npm run format:fix",
     "start": "next start",
     "lint": "next lint",
@@ -50,7 +50,7 @@
     "yup": "^1.2.0"
   },
   "devDependencies": {
-    "@svgr/webpack": "^8.0.1",
+    "@svgr/webpack": "^8.1.0",
     "@types/base-64": "^1.0.2",
     "@types/react-input-mask": "^3.0.4",
     "@typescript-eslint/eslint-plugin": "^6.10.0",

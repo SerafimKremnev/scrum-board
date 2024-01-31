@@ -1,10 +1,15 @@
 'use client';
-import { cva } from 'class-variance-authority';
 import type { VariantProps } from 'class-variance-authority';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { FC, ReactNode } from 'react';
-import LoadingSpinner from '../../loading-spinner/ui';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import {
+  cvaButton,
+  cvaButtonInner,
+  cvaButtonInnerRow,
+  cvaIcon,
+} from './ButtonStyles';
 
 interface Props
   extends VariantProps<typeof cvaButton>,
@@ -24,47 +29,6 @@ interface Props
   hoverTextAnimation?: boolean;
   customIcon?: () => ReactNode;
 }
-
-const cvaButton = cva(
-  [
-    'group/button',
-    'relative',
-    'inline-flex items-center justify-center',
-    'cursor-pointer select-none',
-    'disabled:cursor-not-allowed',
-  ],
-  {
-    variants: {
-      theme: {},
-      size: {},
-      isLoading: {
-        true: ['!text-opacity-0'],
-        false: [],
-      },
-    },
-    defaultVariants: {},
-  }
-);
-
-const cvaIcon = cva(
-  ['inline-flex justify-center items-center', 'text-0', 'rounded-full'],
-  {
-    variants: {
-      theme: {},
-      size: {},
-      isLoading: {},
-    },
-    defaultVariants: {},
-  }
-);
-
-const cvaButtonInner = cva(['block overflow-hidden'], {
-  variants: {
-    size: {},
-  },
-});
-
-const cvaButtonInnerRow = cva(['block align-middle relative']);
 
 const Button: FC<Props> = ({
   href = '',

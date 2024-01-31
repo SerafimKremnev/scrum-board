@@ -1,8 +1,8 @@
-import { cva } from 'class-variance-authority';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { cvaImage, cvaImageWrap } from './LazyImageStyles';
 
 interface ILazyImageProps {
   fill?: boolean;
@@ -18,30 +18,6 @@ interface ILazyImageProps {
   imageWrapClass?: string;
   imageRatio?: string;
 }
-
-const cvaImageWrap = cva(['overflow-hidden [backface-visibility:hidden]'], {
-  variants: {
-    type: {
-      relative: ['inline-block'],
-      absolute: ['absolute inset-0'],
-    },
-  },
-});
-
-const cvaImage = cva(
-  ['transition-all duration-300 ease-in-out [backface-visibility:hidden]'],
-  {
-    variants: {
-      state: {
-        default: ['opacity-0'],
-        loaded: ['opacity-1'],
-      },
-    },
-    defaultVariants: {
-      state: 'default',
-    },
-  }
-);
 
 export const LazyImage = ({
   quality = 90,
