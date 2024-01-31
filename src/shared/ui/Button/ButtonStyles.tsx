@@ -2,6 +2,7 @@ import { cva } from 'class-variance-authority';
 
 export const cvaButton = cva(
   [
+    'ButtonStyles-cvaButton',
     'relative',
     'inline-flex items-center justify-center',
     'group/button cursor-pointer select-none disabled:cursor-not-allowed',
@@ -20,7 +21,12 @@ export const cvaButton = cva(
 );
 
 export const cvaIcon = cva(
-  ['inline-flex justify-center items-center', 'text-0', 'rounded-full'],
+  [
+    'ButtonStyles-cvaIcon',
+    'inline-flex justify-center items-center',
+    'text-0',
+    'rounded-full',
+  ],
   {
     variants: {
       theme: {},
@@ -31,10 +37,17 @@ export const cvaIcon = cva(
   }
 );
 
-export const cvaButtonInner = cva(['block overflow-hidden'], {
-  variants: {
-    size: {},
-  },
-});
+export const cvaButtonInner = cva(
+  ['ButtonStyles-cvaButtonInner', 'block overflow-hidden'],
+  {
+    variants: {
+      size: {},
+    },
+  }
+);
 
-export const cvaButtonInnerRow = cva(['block align-middle relative']);
+export const cvaButtonInnerRow = cva([
+  'ButtonStyles-cvaButtonInnerRow',
+  'relative',
+  'block',
+]);
