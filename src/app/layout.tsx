@@ -3,6 +3,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import ReduxProvider from '@/shared/store/ReduxProvider';
 import SmoothScroll from '@/shared/ui/SmoothScroll/SmoothScroll';
+import { RemResizeScript } from '@/features/rem-resize';
 
 // import 'swiper/css';
 // import 'swiper/css/navigation';
@@ -37,47 +38,12 @@ export default function RootLayout({ children, ...rest }: RootLayoutProps) {
   return (
     <html lang="ru">
       <head>
-        <script
-          data-cfasync="false"
-          id="rem-resize"
-          dangerouslySetInnerHTML={{
-            __html: `function remResize () {
-              // Стандартный размер шрифта в пикселях, который задан для тега html, для удобства это всегда 10px
-              const defaultFontSize = 10;
-              // Значение ширины экрана в котором масштаб будет 100%, как в макете
-              const startScaleWidth = 1440;
-              // Значение ширины экрана до которого масштабирование будет увеличиваться
-              const endScaleTopWidth = 1920;
-              // Значение ширины экрана до которого масштабирование будет уменьшаться
-              const endScaleBottomWidth = 1024;
-
-              const widthWidth = document.documentElement.clientWidth;
-
-              const htmlEl = document.querySelector('html');
-
-              if ((widthWidth > endScaleTopWidth) && htmlEl) {
-                const diff = startScaleWidth - endScaleTopWidth
-                const percent = diff / (startScaleWidth / 100) / 100;
-                htmlEl.style.fontSize = defaultFontSize - defaultFontSize * percent + 'px';
-              } else if ((widthWidth > startScaleWidth) && htmlEl) {
-                const diff = startScaleWidth - widthWidth;
-                const percent = diff / (startScaleWidth / 100) / 100;
-                htmlEl.style.fontSize = defaultFontSize - defaultFontSize * percent + 'px';
-              } else if ((widthWidth < startScaleWidth) && (widthWidth >= endScaleBottomWidth) && htmlEl) {
-                const diff = startScaleWidth - widthWidth;
-                const percent = diff / (startScaleWidth / 100) / 100;
-                htmlEl.style.fontSize = defaultFontSize - defaultFontSize * percent + 'px';
-              } else {
-                htmlEl.style.fontSize = 10 + 'px';
-              }
-            };
-              remResize();
-              setTimeout(() => {
-                remResize();
-              }, 100);
-              window.addEventListener('resize', remResize)
-          `,
-          }}></script>
+        <RemResizeScript
+          defaultFontSize={10}
+          startScaleWidth={1440}
+          endScaleTopWidth={1920}
+          endScaleBottomWidth={1024}
+        />
       </head>
       <body>
         <ReduxProvider {...rest}>
