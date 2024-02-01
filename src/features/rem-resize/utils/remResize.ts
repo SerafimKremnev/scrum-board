@@ -15,24 +15,24 @@ export const remResize = ({
   endScaleTopWidth,
   endScaleBottomWidth,
 }: Params) => {
-  const widthWidth = document.documentElement.clientWidth;
+  const windowWidth = document.documentElement.clientWidth;
 
   const htmlEl = document.querySelector('html');
 
-  if (widthWidth > endScaleTopWidth && htmlEl) {
+  if (windowWidth > endScaleTopWidth && htmlEl) {
     const diff = startScaleWidth - endScaleTopWidth;
     const percent = diff / (startScaleWidth / 100) / 100;
     htmlEl.style.fontSize = defaultFontSize - defaultFontSize * percent + 'px';
-  } else if (widthWidth > startScaleWidth && htmlEl) {
-    const diff = startScaleWidth - widthWidth;
+  } else if (windowWidth > startScaleWidth && htmlEl) {
+    const diff = startScaleWidth - windowWidth;
     const percent = diff / (startScaleWidth / 100) / 100;
     htmlEl.style.fontSize = defaultFontSize - defaultFontSize * percent + 'px';
   } else if (
-    widthWidth < startScaleWidth &&
-    widthWidth >= endScaleBottomWidth &&
+    windowWidth < startScaleWidth &&
+    windowWidth >= endScaleBottomWidth &&
     htmlEl
   ) {
-    const diff = startScaleWidth - widthWidth;
+    const diff = startScaleWidth - windowWidth;
     const percent = diff / (startScaleWidth / 100) / 100;
     htmlEl.style.fontSize = defaultFontSize - defaultFontSize * percent + 'px';
   } else if (htmlEl) {
