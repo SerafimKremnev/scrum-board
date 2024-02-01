@@ -36,6 +36,6 @@ export const remResize = ({
     const percent = diff / (startScaleWidth / 100) / 100;
     htmlEl.style.fontSize = defaultFontSize - defaultFontSize * percent + 'px';
   } else if (htmlEl) {
-    htmlEl.style.fontSize = 10 + 'px';
+    htmlEl.style.fontSize = defaultFontSize + 'px';
   }
 };
