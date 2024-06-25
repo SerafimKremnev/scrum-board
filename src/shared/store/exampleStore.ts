@@ -11,11 +11,12 @@ interface ExampleStoreActions {
 export const useExampleStore = create<ExampleStoreState & ExampleStoreActions>(
   (set) => ({
     someState: null,
-    setSomeState: (someState) =>
+    setSomeState: (someState) => {
       set(() => {
         return {
           someState,
         };
-      }),
+      });
+    },
   })
 );
