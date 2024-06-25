@@ -1,5 +1,8 @@
 'use client';
 import { cubicBezier, motion } from 'framer-motion';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 const variantsPage = {
   in: {
@@ -31,7 +34,7 @@ const variantsPage = {
 const Template = ({ children }: any) => {
   return (
     <motion.div variants={variantsPage} animate="in" initial="out" exit="out">
-      {children}
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </motion.div>
   );
 };

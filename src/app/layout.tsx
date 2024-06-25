@@ -1,7 +1,6 @@
 import './globals.css';
 import React from 'react';
 import type { Metadata } from 'next';
-import ReduxProvider from '@/shared/store/ReduxProvider';
 import SmoothScroll from '@/shared/ui/SmoothScroll/SmoothScroll';
 import { RemResizeScript } from '@/features/rem-resize';
 
@@ -34,7 +33,7 @@ interface RootLayoutProps {
   params: any;
 }
 
-export default function RootLayout({ children, ...rest }: RootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ru">
       <head>
@@ -46,11 +45,9 @@ export default function RootLayout({ children, ...rest }: RootLayoutProps) {
         />
       </head>
       <body>
-        <ReduxProvider {...rest}>
-          <SmoothScroll>
-            <div id="app">{children}</div>
-          </SmoothScroll>
-        </ReduxProvider>
+        <SmoothScroll>
+          <div id="app">{children}</div>
+        </SmoothScroll>
       </body>
     </html>
   );

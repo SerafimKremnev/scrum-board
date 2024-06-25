@@ -24,9 +24,6 @@ baseHeaders.forEach((value, key) => {
 });
 
 export const prepareHeaders = (headers: Headers) => {
-  // getState:any, withToken:Boolean
-  // const token = (getState() as RootState).auth.token
-
   baseHeaders.forEach((value, key) => {
     headers.set(key, value);
   });
