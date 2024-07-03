@@ -19,12 +19,12 @@ export const axiosContent = axios.create({
 });
 
 const authRequestInterceptor = (config: InternalAxiosRequestConfig) => {
-  const token =
-    typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+  // const token =
+  //   typeof window !== 'undefined' ? localStorage.getItem('token') : null;
 
-  if (token) {
-    config.headers['Authorization-Token'] = token;
-  }
+  // if (token) {
+  //   config.headers['Authorization-Token'] = token;
+  // }
 
   return config;
 };
