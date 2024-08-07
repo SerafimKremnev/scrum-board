@@ -15,7 +15,22 @@ const moduleExports = {
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/i,
-      use: ['@svgr/webpack'],
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            svgo: true,
+            svgoConfig: {
+              plugins: [
+                {
+                  name: 'removeDimensions',
+                  active: true,
+                },
+              ],
+            },
+          },
+        },
+      ],
     });
     return config;
   },
