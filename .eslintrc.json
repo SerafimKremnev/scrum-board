@@ -14,7 +14,10 @@
   "rules": {
     "prettier/prettier": ["off"],
     "security/detect-object-injection": "off",
-    "max-len": ["off", { "code": 120 }],
+    "max-lines": [
+      "error",
+      { "max": 300, "skipBlankLines": true, "skipComments": true }
+    ],
     "react/jsx-filename-extension": "off",
     "import/order": "off",
     "no-empty-pattern": "off",
