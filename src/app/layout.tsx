@@ -26,6 +26,8 @@ export const metadata: Metadata = {
   title: 'Next.js Project',
   description:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, et',
+  // Шаблонизация добавления фавиконок
+  // ...generateIcons()
 };
 
 interface RootLayoutProps {
