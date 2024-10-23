@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 
 /**
- *
- * Импортируй фавиконку
- * npx realfavicon generate <путь до картинка> favicon-settings.json output-data.json ./public/favicons
+ * Импортируй фавиконку и запусти команду
+ * npx realfavicon generate <путь до картинки> favicon-settings.json output-data.json ./public/favicons
  * @docs https://realfavicongenerator.net/favicon/node-cli
  */
 
