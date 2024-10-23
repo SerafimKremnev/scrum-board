@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
 
 /**
- * Генерирует фавиконки
  *
- * Используем этот инстумент https://realfavicongenerator.net/
- * Он генерирует иконки для разных платформ
- *
- * разархивируем иконки и кидаем в папку favicons
- *
- * @returns {Metadata}
+ * Импортируй фавиконку
+ * npx realfavicon generate <путь до картинка> favicon-settings.json output-data.json ./public/favicons
+ * @docs https://realfavicongenerator.net/favicon/node-cli
+ */
+
+/**
+ * Пример использования где импортируется favicon.svg в директорию public, а затем удаляются исходные файлы и output-data.json
+ * npx realfavicon generate ./public/favicon.svg favicon-settings.json output-data.json ./public/favicons && rm ./public/favicon.svg && rm ./output-data.json
  */
 
 export const generateIcons = (): Metadata => {
