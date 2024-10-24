@@ -17,7 +17,7 @@ html {
 
 html,
 body {
-  height: 100%;
+  height: auto; /* изменять аккуратно, иначе может сломаться метод lenis.stop() */
 }
 
 select {
