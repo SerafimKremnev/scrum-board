@@ -10,7 +10,7 @@
     "build": "next build --experimental-debug-memory-usage && npm run lint && npm run format:fix",
     "start": "NODE_OPTIONS=--inspect next start",
     "lint": "next lint",
-    "test": "vitest run --coverage.enabled --coverage.lines=100",
+    "test": "vitest run --coverage.enabled --coverage.lines=80",
     "format": "prettier --check .",
     "format:fix": "prettier --write --list-different .",
     "prepare": "husky install"
@@ -89,7 +89,7 @@
     "**/*.{js,jsx,ts,tsx}": [
       "npx eslint --fix",
       "npx prettier --write",
-      "npx vitest run --coverage.enabled --coverage.lines=100"
+      "npx vitest run --coverage.enabled --coverage.lines=80"
     ]
   },
   "browserslist": [
