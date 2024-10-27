@@ -11,7 +11,7 @@ const TestEntity: FC<Props> = () => {
   return (
     <div className={cvaRoot()}>
       <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 2)}>Increment</button>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
       <button onClick={() => setCount(count - 1)}>Decrement</button>
     </div>
   );
