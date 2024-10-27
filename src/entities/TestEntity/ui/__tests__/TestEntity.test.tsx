@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import TestEntity from './TestEntity';
+import TestEntity from '../TestEntity';
 
 describe('TestEntity', () => {
   it('renders initial count of 0', () => {
