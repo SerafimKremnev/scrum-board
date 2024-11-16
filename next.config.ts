@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const moduleExports = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   reactStrictMode: false,
   images: {
     unoptimized: Boolean(Number(process.env.UNOPTIMIZED_IMAGES)),
@@ -32,4 +33,5 @@ const moduleExports = {
     return config;
   },
 };
-module.exports = moduleExports;
+
+export default nextConfig;
