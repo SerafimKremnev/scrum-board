@@ -1,44 +1,28 @@
-import { cva } from 'class-variance-authority';
+import { cva } from 'cva';
 
-export const cvaLoading = cva(
-  [
-    'LoadingSpinnerStyles-cvaLoading',
-    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[2]',
+export const cvaLoading = cva({
+  base: [
+    'LoadingSpinner-cvaLoading',
+    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
+    'z-[2] block',
+    'text-[2rem] w-[1em] h-[1em]',
+    '[&>div]:box-border [&>div]:block [&>div]:absolute',
+    '[&>div]:w-full [&>div]:h-full',
+    '[&>div]:rounded-[50%]',
+    '[&>div]:border-[0.1em]',
+    '[&>div]:animate-lds-ring',
+    '[&>div:nth-child(1)]:-animation-delay-[0.45s]',
+    '[&>div:nth-child(2)]:-animation-delay-[0.3s]',
+    '[&>div:nth-child(3)]:-animation-delay-[0.15s]',
   ],
-  {
-    variants: {
-      size: {
-        xs: ['w-1.8 h-1.8'],
-        sm: ['w-2.4 h-2.4'],
-        md: ['w-3.2 h-3.2'],
-        lg: ['w-3.6 h-3.6'],
-        xl: ['w-5 h-5'],
-      },
+  variants: {
+    size: {
+      small: ['text-[2rem]'],
+      normal: ['text-[4rem]'],
+      large: ['text-[7rem]'],
     },
-    defaultVariants: {
-      size: 'md',
-    },
-  }
-);
-
-export const cvaCircle = cva(
-  [
-    'LoadingSpinnerStyles-cvaCircle',
-    'absolute',
-    'w-[40%] h-[40%]',
-    'm-0',
-    'animate-loading-spin child-1:animation-delay-n1.5 child-2:animation-delay-n1 child-3:animation-delay-n0.5',
-    'border-none rounded-full',
-  ],
-  {
-    variants: {
-      color: {
-        black: ['bg-black'],
-        white: ['bg-white'],
-      },
-    },
-    defaultVariants: {
-      color: 'black',
-    },
-  }
-);
+  },
+  defaultVariants: {
+    size: 'normal',
+  },
+});

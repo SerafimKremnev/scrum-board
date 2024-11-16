@@ -1,5 +1,5 @@
 'use client';
-import type { VariantProps } from 'class-variance-authority';
+import type { VariantProps } from 'cva';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { FC, ReactNode } from 'react';
@@ -80,7 +80,9 @@ const Button: FC<Props> = ({
             <span className={cvaButtonInnerRow({})}>
               {customIcon ? customIcon() : null} {children}
             </span>
-            {isLoading ? <LoadingSpinner size={'sm'} color={'black'} /> : null}
+            {isLoading ? (
+              <LoadingSpinner size={'small'} color={'black'} />
+            ) : null}
           </span>
         </>
       )}
@@ -118,7 +120,9 @@ const Button: FC<Props> = ({
             <span className={cvaButtonInnerRow({})}>
               {customIcon ? customIcon() : null} {children}
             </span>
-            {isLoading ? <LoadingSpinner size={'sm'} color={'black'} /> : null}
+            {isLoading ? (
+              <LoadingSpinner size={'small'} color={'black'} />
+            ) : null}
           </span>
         </>
       )}

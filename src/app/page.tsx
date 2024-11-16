@@ -6,7 +6,7 @@ export default function Home() {
       <main>
         <h1>Next.js Project home page</h1>
         <Button href={'/another-page'}>Go to another page</Button>
-        <h2 className='text-[10rem] font-bold py-4'>TestEntity</h2>
+        <h2 className="text-[10rem] font-bold py-4">TestEntity</h2>
         <TestEntity />
       </main>
     </>

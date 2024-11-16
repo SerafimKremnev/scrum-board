@@ -1,21 +1,30 @@
-import { VariantProps } from 'class-variance-authority';
+import { VariantProps } from 'cva';
 import clsx from 'clsx';
 import { FC } from 'react';
-import { cvaCircle, cvaLoading } from './LoadingSpinnerStyles';
+import { cvaLoading } from './LoadingSpinnerStyles';
 
-interface Props
-  extends VariantProps<typeof cvaLoading>,
-    VariantProps<typeof cvaCircle> {
+interface Props extends VariantProps<typeof cvaLoading> {
   className?: string;
+  color?: string;
 }
 
-const LoadingSpinner: FC<Props> = ({ size, color, className }) => {
+const LoadingSpinner: FC<Props> = ({ size, color = '#000', className }) => {
   return (
-    <div className={clsx(cvaLoading({ size }), className)}>
-      <hr className={cvaCircle({ color })} />
-      <hr className={cvaCircle({ color })} />
-      <hr className={cvaCircle({ color })} />
-      <hr className={cvaCircle({ color })} />
+    <div
+      className={clsx(cvaLoading({ size }), className)}
+      style={{ fontSize: size + 'px' }}>
+      <div
+        style={{
+          borderColor: `${color} transparent transparent transparent`,
+        }}></div>
+      <div
+        style={{
+          borderColor: `${color} transparent transparent transparent`,
+        }}></div>
+      <div
+        style={{
+          borderColor: `${color} transparent transparent transparent`,
+        }}></div>
     </div>
   );
 };

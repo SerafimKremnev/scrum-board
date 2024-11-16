@@ -6,38 +6,39 @@
     "node": ">=20.11.0"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build --experimental-debug-memory-usage && npm run lint && npm run format:fix",
     "start": "NODE_OPTIONS=--inspect next start",
     "lint": "next lint",
-    "test": "vitest run --coverage.enabled --coverage.lines=80",
+    "test": "vitest run",
     "format": "prettier --check .",
     "format:fix": "prettier --write --list-different .",
     "prepare": "husky install"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
     "@popperjs/core": "^2.11.8",
-    "@sentry/nextjs": "^7.93.0",
-    "@studio-freight/react-lenis": "^0.0.43",
-    "@tanstack/react-query": "^5.45.1",
+    "@tanstack/react-query": "^5.60.5",
     "@types/node": "20.4.5",
-    "@types/react": "18.2.16",
-    "@types/react-dom": "18.2.7",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "axios": "^1.6.5",
     "base-64": "^1.0.0",
     "body-scroll-lock-upgrade": "^1.1.0",
-    "class-variance-authority": "^0.6.1",
     "clsx": "^1.2.1",
+    "cva": "^1.0.0-beta.1",
     "date-fns": "^2.30.0",
-    "eslint-config-next": "13.4.12",
+    "eslint-config-next": "15.0.3",
     "eslint-plugin-next": "^0.0.0",
     "formik": "^2.4.3",
     "framer-motion": "^10.12.12",
     "gsap": "^3.12.5",
-    "next": "^14.2.0",
+    "lenis": "^1.1.16",
+    "next": "15.0.3",
     "nookies": "^2.5.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "react-hook-form": "^7.53.2",
     "react-input-mask": "^2.0.4",
     "react-intersection-observer": "^9.4.3",
     "react-merge-refs": "^2.1.1",
@@ -46,7 +47,8 @@
     "react-use-measure": "^2.1.1",
     "swiper": "^11.0.2",
     "typescript": "5.1.6",
-    "yup": "^1.2.0"
+    "yup": "^1.2.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
@@ -99,5 +101,9 @@
     "firefox 67",
     "opera 51",
     "safari 12"
-  ]
+  ],
+  "overrides": {
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+  }
 }

@@ -2,8 +2,7 @@
 import { FC, useState } from 'react';
 import { cvaRoot } from './TestEntityStyles';
 
-interface Props {
-}
+interface Props {}
 
 const TestEntity: FC<Props> = () => {
   const [count, setCount] = useState(0);
@@ -15,6 +14,6 @@ const TestEntity: FC<Props> = () => {
       <button onClick={() => setCount(count - 1)}>Decrement</button>
     </div>
   );
-}
+};
 
 export default TestEntity;
