@@ -1,3 +1,8 @@
-import { cva } from 'class-variance-authority';
+import { cva } from 'cva';
 
-export const cvaRoot = cva(['ExampleWidgetStyles-cvaRoot', '']);
+export const cvaRoot = cva({
+  base: ['ExampleWidgetStyles-cvaRoot', ''],
+  variants: {},
+  compoundVariants: [],
+  defaultVariants: {},
+});

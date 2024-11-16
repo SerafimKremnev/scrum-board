@@ -1,6 +1,6 @@
 'use client';
 import { FC, ReactNode, useEffect } from 'react';
-import { Lenis as ReactLenis, useLenis } from '@studio-freight/react-lenis';
+import { Lenis as ReactLenis, useLenis } from 'lenis/react';
 
 const options = {};
 

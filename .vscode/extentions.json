@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "mxsdev.typescript-explorer",
+    "bradlc.vscode-tailwindcss",
+    "austenc.tailwind-docs",
+    "kisstkondoros.vscode-codemetrics",
+    "formulahendry.auto-rename-tag",
+    "formulahendry.auto-close-tag"
+  ]
+}

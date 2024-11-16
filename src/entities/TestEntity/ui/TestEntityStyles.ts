@@ -1,7 +1,5 @@
-import { cva } from 'class-variance-authority';
+import { cva } from 'cva';
 
-
-export const cvaRoot = cva([
-  'TestEntityStyles-cvaRoot',
-  '',
-]);
+export const cvaRoot = cva({
+  base: ['TestEntityStyles-cvaRoot', ''],
+});
