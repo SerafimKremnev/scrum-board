@@ -1,4 +1,3 @@
-'use client';
 import Button from '@/shared/ui/Button/Button';
 import TestEntity from '@/entities/TestEntity/ui/TestEntity';
 
